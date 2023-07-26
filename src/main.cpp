@@ -6,11 +6,11 @@
 #include <MQTT.h>
 
 // WIFI Config
-#define WIFI_SSID "FRITZ!Box 7530 PG"
-#define WIFI_PASSWD "1Kaffee@W@rk!"
+#define WIFI_SSID " "
+#define WIFI_PASSWD " "
 
 // MQTT Config
-#define MQTT_HOST IPAddress(192,168,178,30)
+#define MQTT_HOST IPAddress(0,0,0,0)
 #define MQTT_PORT 1883
 
 // Topic Config
@@ -50,7 +50,7 @@ void connectToMqttBroker()
   mqttClient.begin(MQTT_HOST, espClient);
 
   Serial.print("\nconnecting to MQTT-Broker ...");
-  while (!mqttClient.connect("esp8266", "rene", "root")) {
+  while (!mqttClient.connect("esp8266", "USERNAME", "PW")) {
     Serial.print(".");
     delay(1000);
   }
